@@ -1,0 +1,262 @@
+1 Month
+*******
+
+1) variables
+       
+   
+2) functions
+
+
+3) Arrays
+
+
+4) JSON
+     
+
+5) Promises
+
+
+6) DOM Manipulations
+
+
+
+7) CallBacks
+
+
+
+8) Events Handling
+
+
+
+9) Event Bubbling & Event Capturing
+
+
+
+10) Debouncing
+
+
+
+11) Throttling
+
+
+
+12) AJAX Calls
+
+   
+
+13) Regular Expressions
+
+
+
+14) Closures
+
+
+
+15) async & defer
+
+
+16) classes
+
+Introduction
+************
+        - JavaScript is the Scripting Language.
+
+        - JavaScript Released by Netscape.
+
+        - Current Version of JavaScript is ES13.
+
+        - ES Stands for ECMA Script.
+
+        - JavaScript used to build the following applications.
+
+                1) Angular
+
+                2) React
+
+                3) NodeJS
+
+                4) VueJS
+
+                5) Dynamic Web Pages
+
+        - we will save the JavaScript files with ".js" extension.
+
+        - we will include JavaScript to webpages by using <script> tag.
+
+        Ex.
+                <html>
+                    <head>
+                        <script>
+                            //JavaScript
+                        </script>
+                    </head>
+                </html>
+
+        - we can execute JavaScript in two ways.
+
+            1) node tool
+
+                    NodeJS
+
+            2) intrepreter
+
+                    Browsers
+
+        - JavaScript execution is Synchronous execution.
+
+        - JavaScript is the Object Based Scripting Language.
+
+            Ex.
+                    window
+
+                    document
+
+                    console
+
+                    Date
+
+                    ---
+                    ---
+                    ---
+
+Software Installation
+*********************
+
+1) download and install NodeJS
+
+    website : https://nodejs.org/en/download/
+
+    file    : node-v14.18.1-x64.msi
+
+
+2) download and install Visual Studio Code
+
+    website : https://code.visualstudio.com/docs/?dv=win
+
+    file    : VSCodeUserSetup-x64-1.61.0.exe
+
+
+execution of JavaScript
+***********************
+
+Ex.
+    demo.js
+
+    > node demo.js
+
+
+
+Optional Parameters in functions
+********************************
+
+    - while calling the functions we will make "few" parameters are optional.
+
+    - this concept introduced in "ES6"
+
+    - optional parameters we will represent with "?"
+
+    - optional parameters will work in "TypeScript".
+
+    - "superset" of "JavaScript" called as "TypeScript".
+
+    - we will save "TypeScript" files with ".ts" extension.
+
+    - TypeScript follows the "OOPS".
+
+    - TypeScript is "Programming" Language.
+
+    - Browsers won't understand TypeScript.
+
+    - So, we need to convert TypeScript to Equalent JavaScript.
+
+    - conversion from TypeScript to Equalent JavaScript called as "Transpilation".
+
+
+Installation of TypeScript
+**************************
+
+> npm install -g typescript
+
+npm stands for node packaging manager.
+
+-g stands for global Installation
+
+
+
+Transpilation
+*************
+
+> tsc example.ts
+
+       o/p
+
+  example.js
+
+
+> node example.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
