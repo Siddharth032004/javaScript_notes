@@ -1,0 +1,15 @@
+<div id="parent" style="padding:20px; background:lightcoral;">
+  Parent Div
+  <button id="child" style="margin:20px;">Click Me</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", function(event) {
+  alert("Parent Div Capturing!");
+  event.stopPropagation(); // ❌ stop capturing before reaching child
+}, true); // capturing enabled
+
+document.getElementById("child").addEventListener("click", function() {
+  alert("Child Button Clicked!");
+});
+</script>

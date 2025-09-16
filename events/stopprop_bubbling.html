@@ -1,0 +1,15 @@
+<div id="parent" style="padding:20px; background:lightblue;">
+  Parent Div
+  <button id="child" style="margin:20px;">Click Me</button>
+</div>
+
+<script>
+document.getElementById("parent").addEventListener("click", function() {
+  alert("Parent Div Clicked!");
+});
+
+document.getElementById("child").addEventListener("click", function(event) {
+  alert("Child Button Clicked!");
+  event.stopPropagation(); // ❌ stop bubbling here
+});
+</script>

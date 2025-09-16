@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Bubbling vs Capturing</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    div { padding: 30px; border: 2px solid black; margin: 10px; }
+    #grandparent { background: lightyellow; }
+    #parent { background: lightblue; }
+    #child { background: lightgreen; }
+  </style>
+</head>
+<body>
+  <h2>Event Bubbling, Capturing, and Stop Propagation</h2>
+
+  <div id="grandparent">
+    Grandparent
+    <div id="parent">
+      Parent
+      <button id="child">Click Me</button>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Bubbling (default) ----------
+    document.getElementById("grandparent").addEventListener("click", function() {
+      console.log("Grandparent (Bubbling)");
+    });
+
+    document.getElementById("parent").addEventListener("click", function() {
+      console.log("Parent (Bubbling)");
+    });
+
+    document.getElementById("child").addEventListener("click", function() {
+      console.log("Child (Bubbling)");
+    });
+
+    // ---------- Capturing (useCapture = true) ----------
+    document.getElementById("grandparent").addEventListener("click", function() {
+      console.log("Grandparent (Capturing)");
+    }, true);
+
+    document.getElementById("parent").addEventListener("click", function() {
+      console.log("Parent (Capturing)");
+    }, true);
+
+    document.getElementById("child").addEventListener("click", function() {
+      console.log("Child (Capturing)");
+    }, true);
+
+    // ---------- Stop Propagation Example ----------
+    document.getElementById("parent").addEventListener("click", function(event) {
+      console.log("Parent (StopPropagation) - Event Stopped Here!");
+      event.stopPropagation(); // stops further bubbling/capturing
+    });
+  </script>
+</body>
+</html>

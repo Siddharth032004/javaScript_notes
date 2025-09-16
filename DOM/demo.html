@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>innerText vs textContent vs innerHTML</title>
+</head>
+<body>
+  <h2>innerText vs textContent vs innerHTML</h2>
+
+  <!-- Example div -->
+  <div id="myDiv" style="display:none">
+    <b>Hello</b> World <span style="display:none">Hidden Text</span>
+  </div>
+
+  <button onclick="showResults()">Click to Test</button>
+
+  <p><b>Output:</b></p>
+  <pre id="output"></pre>
+
+  <script>
+    function showResults() {
+      let div = document.getElementById("myDiv");
+
+      let innerText = div.innerText;
+      let textContent = div.textContent;
+      let innerHTML = div.innerHTML;
+
+      document.getElementById("output").textContent =
+        "innerText   → " + innerText + "\n" +
+        "textContent → " + textContent + "\n" +
+        "innerHTML   → " + innerHTML;
+    }
+  </script>
+</body>
+</html>
