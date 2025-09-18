@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form Example</title>
+  <style>
+    body { font-family: Arial; padding: 30px; }
+    .box { padding: 20px; border: 1px solid gray; width: 250px; }
+    input { display: block; margin: 10px 0; padding: 8px; width: 90%; }
+    button { padding: 10px; margin: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>Login Form</h2>
+
+  <div class="box">
+    <label>Username:</label>
+    <input type="text" id="username">
+
+    <label>Password:</label>
+    <input type="password" id="password">
+
+    <!-- Calling JS functions directly from HTML -->
+    <button onclick="login()">Login (Click)</button>
+    <button ondblclick="resetForm()">Reset (Double Click)</button>
+  </div>
+
+  <p id="message"></p>
+
+  <script>
+    // Correct credentials
+    const correctUser = "admin";
+    const correctPass = "1234";
+
+    // Function for login (onclick)
+    function login() {
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+
+      if (user === correctUser && pass === correctPass) {
+        document.getElementById("message").innerHTML = "✅ Logined Successfully!";
+        document.getElementById("message").style.color = "green";
+      } else {
+        document.getElementById("message").innerHTML = "❌ Username/Password Unmatched!";
+        document.getElementById("message").style.color = "red";
+      }
+    }
+
+    // Function for reset (ondblclick)
+    function resetForm() {
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("message").innerHTML = "🔄 Form Reset!";
+      document.getElementById("message").style.color = "blue";
+    }
+  </script>
+</body>
+</html>

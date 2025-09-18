@@ -1,0 +1,26 @@
+<input type="text" id="search" placeholder="Search here...">
+
+<script>
+// Debounce function
+function debounce(func, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer); // reset the timer
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+// Function we want to control
+function searchQuery(query) {
+  console.log("Searching for:", query);
+}
+
+// Attach debounce to input
+document.getElementById("search")
+  .addEventListener("input", debounce(function(e) {
+    searchQuery(e.target.value);
+  }, 500));
+</script>
+
