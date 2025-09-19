@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Throttling Example</title>
+</head>
+<body>
+  <input type="text" id="search" placeholder="Type something...">
+
+  <script>
+    let s = document.getElementById("search");
+    s.onkeypress = wrapper;
+
+    let counter = 0;
+    let flag = true;
+
+    function wrapper() {
+      if (flag) {
+        throttling();
+        flag = false;
+        setTimeout(() => {
+          flag = true;
+        }, 2000); // 2 seconds throttle
+      }
+    }
+
+    function throttling() {
+      console.log("Throttled:", ++counter);
+    }
+  </script>
+</body>
+</html>

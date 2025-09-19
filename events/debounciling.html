@@ -1,26 +1,28 @@
-<input type="text" id="search" placeholder="Search here...">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debouncing Example</title>
+</head>
+<body>
+  <input type="text" id="search" placeholder="Type something...">
 
-<script>
-// Debounce function
-function debounce(func, delay) {
-  let timer;
-  return function(...args) {
-    clearTimeout(timer); // reset the timer
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-}
+  <script>
+    let s = document.getElementById("search");
+    s.onkeypress = wrapper;
 
-// Function we want to control
-function searchQuery(query) {
-  console.log("Searching for:", query);
-}
+    let counter = 0;
+    let timer;
 
-// Attach debounce to input
-document.getElementById("search")
-  .addEventListener("input", debounce(function(e) {
-    searchQuery(e.target.value);
-  }, 500));
-</script>
+    function wrapper() {
+      clearTimeout(timer); // clear previous timer
+      timer = setTimeout(debounce, 3000); // wait 3 sec after typing stops
+    }
 
+    function debounce() {
+      console.log("Debounced:", ++counter);
+    }
+  </script>
+</body>
+</html>
